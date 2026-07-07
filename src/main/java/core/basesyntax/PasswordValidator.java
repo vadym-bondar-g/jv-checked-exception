@@ -6,7 +6,7 @@ public class PasswordValidator {
             throws PasswordValidationException {
         if (password.equals(repeatPassword)) {
             System.out.println("Passwords do match");
-        }else  {
+        } else {
             throw new PasswordValidationException("Passwords do not match");
         }
     }
