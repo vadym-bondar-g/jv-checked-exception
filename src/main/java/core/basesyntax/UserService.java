@@ -6,10 +6,10 @@ public class UserService {
         //write your code here
         try {
             passwordValidator.validate(user.getPassword(), user.getRepeatPassword());
+            saveUser(user);
         } catch (PasswordValidationException e) {
             System.out.println(e.getMessage());
         }
-        saveUser(user);
     }
 
     public void saveUser(User user) {
