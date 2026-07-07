@@ -4,7 +4,10 @@ public class PasswordValidator {
 
     public void validate(String password, String repeatPassword)
             throws PasswordValidationException {
-        if (!password.equals(repeatPassword)) {
+        if (password == null || repeatPassword == null) {
+            throw new PasswordValidationException("Password or repeat password is null");
+        }
+        if (!password.equals(repeatPassword) && password.length() < 10) {
             throw new PasswordValidationException("Passwords doesnt  match");
         }
     }
